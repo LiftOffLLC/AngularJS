@@ -1,3 +1,7 @@
+// LiftOff AngularJS Tutorial
+// (c) 2013-2014 LiftOff LLC. http://www.liftoffllc.com
+// License: MIT
+
 var service_sample = angular.module("service_sample", ['ngResource']);
 
 //Declaring the service to get data from the json package
@@ -9,6 +13,7 @@ service_sample.factory('data_service', ['$resource', function ($resource, $scope
   return data_resource;
 }]);
 
+//controller for the example
 var serials_controller = function($scope, data_service){
   $scope.populateSerials = function(){
     data_service.getList({}, {},
@@ -34,4 +39,5 @@ var serials_controller = function($scope, data_service){
   $scope.populateSerials();
 };
 
+//associate the controller to the app defined earlier
 service_sample.controller("series", serials_controller);
