@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script type = "text/javascript" src = "js/angular.min.js"></script>
-  <script type = "text/javascript" src = "js/angular-resource.js"></script>
-  <link rel="stylesheet" href="./styles/default.css">
-</head>
-<body class="greybg" ng-app = "service_sample">
-  <div class="wrapper">
-  <div ng-controller = "series">
-    <div class = "serials_list" ng-show = "pg_display == 'show_serials'">
-      <h3>Choose your series</h3>
-      <ul style = "list-style:none">
-        <li ng-repeat = "series in series_list"><a ng-click = "getSerialActors(series.file)">{{series.name}}</a></li>
-      </ul>
+  <head>
+    <script type = "text/javascript" src = "js/angular.min.js"></script>
+    <script type = "text/javascript" src = "js/angular-resource.js"></script>
+    <link rel="stylesheet" href="./styles/default.css">
+  </head>
+  <body class="greybg" ng-app = "service_sample">
+    <div class="wrapper">
+    <div ng-controller = "series">
+      <div class = "serials_list" ng-show = "pg_display == 'show_serials'">
+        <h3>Choose your series</h3>
+        <ul style = "list-style:none">
+          <li ng-repeat = "series in series_list"><a ng-click = "getSerialActors(series.file)">{{series.name}}</a></li>
+        </ul>
+      </div>
+      <div class = "serial_characters" ng-show = "pg_display == 'show_serial_characters'">
+        <h3>Characters in {{current_serial.name}}</h3> <button class = "btn btn-primary" style="margin-bottom:10px" ng-click = "pg_display = 'show_serials'">Back to list</button>
+        <ul style = "list-style:none">
+          <li ng-repeat = "character in current_serial.characters">
+            <a target = "_blank" ng-href = "{{character.url}}">{{character.name}}</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class = "serial_characters" ng-show = "pg_display == 'show_serial_characters'">
-      <h3>Characters in {{current_serial.name}}</h3> <button class = "btn btn-primary" style="margin-bottom:10px" ng-click = "pg_display = 'show_serials'">Back to list</button>
-      <ul style = "list-style:none">
-        <li ng-repeat = "character in current_serial.characters">
-          <a target = "_blank" ng-href = "{{character.url}}">{{character.name}}</a>
-        </li>
-      </ul>
     </div>
-  </div>
-  </div>
-</body>
-<script src = "js/script_service.js"></script>
+  </body>
+  <script src = "js/script_service.js"></script>
 </html>

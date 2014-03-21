@@ -1,31 +1,31 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="./styles/default.css">
-    <title>AngularJS MVC</title>        
-    </head>
-<body class="greybg">
-  <div class="wrapper">
-  <form class="form" name="StudentFrm">
-    <h3>Please fill in the below details</h3>
-      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="signuptable">
-        <tbody>
-         <tr>
-         <td align="right"  class="xtraheight">Name</td>
-         <td><input class="inputtextclass"type="text" ng-required="true" ng-model="student.name"></td>
-         </tr>
-        <tr>
-         <td align="right" class="xtraheight">Fathers Name</td>
-         <td><input type="text"  class="inputtextclass" ng-required="true" ng-model="student.fathersname"></td>
-         </tr>
-          <tr>
-         <td align="right"  class="xtraheight">School Name</td>
-         <td><input type="text" class="inputtextclass" ng-required="true" ng-model="student.school"></td>
-         </tr>
-          <tr>
-         <td align="right"  class="xtraheight">Favorite Subject</td>
-         <td><input type="text"  class="inputtextclass" ng-required="true" ng-model="student.subject"></td>
-         </tr>                 
-          <tr>
+    <title>AngularJS MVC</title>
+  </head>
+  <body class="greybg">
+    <div class="wrapper">
+      <form class="form" name="StudentFrm">
+        <h3>Please fill in the below details</h3>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="signuptable">
+          <tbody>
+           <tr>
+             <td align="right"  class="xtraheight">Name</td>
+             <td><input class="inputtextclass"type="text" ng-required="true" ng-model="student.name"></td>
+           </tr>
+           <tr>
+             <td align="right" class="xtraheight">Fathers Name</td>
+             <td><input type="text"  class="inputtextclass" ng-required="true" ng-model="student.fathersname"></td>
+           </tr>
+           <tr>
+             <td align="right"  class="xtraheight">School Name</td>
+             <td><input type="text" class="inputtextclass" ng-required="true" ng-model="student.school"></td>
+           </tr>
+           <tr>
+             <td align="right"  class="xtraheight">Favorite Subject</td>
+             <td><input type="text"  class="inputtextclass" ng-required="true" ng-model="student.subject"></td>
+           </tr>
+           <tr>
             <td >&nbsp;</td>
             <td valign="top">
               <input class="greenbtn" type="button" href="javascript:void(0)" ng-click="regrStud()" ng-disabled="StudentFrm.$invalid" style="padding:10px; font-size:14px; letter-spacing:0;" value="Save"/>
@@ -33,31 +33,31 @@
           </tr>
         </tbody>
       </table>
-    </form>  
+    </form>
     <div ng-show="successMsg">
-    <form class="form">   
-      <table>
-      <thead><h3>Thank you for registering. Here are the details</h3></thead>
-        <tbody class="span4">
-         <tr>
-         <td align="right" valign="top" class="xtraheight">Name:&nbsp;</td>
-         <td><span><b> {{student.name}}</b></span></td>
-         </tr>
-        <tr>
-         <td align="right" valign="top" class="xtraheight">Fathers Name:&nbsp; </td>
-         <td><span><b>{{student.fathersname}}</b></span></td>
-         </tr>
-          <tr>
-         <td align="right" valign="top" class="xtraheight">School Name:&nbsp;</td>
-         <td><span><b>{{student.school}}</b></span></td>
-         </tr>
-          <tr>
-         <td align="right" valign="top" class="xtraheight">Favorite Subject:&nbsp;</td>
-         <td><span><b>{{student.subject}}</b></span></td>
-         </tr>                         
-        </tbody>
-      </table>  
-      </form>
-    </div>
-  </div>
+      <form class="form">
+        <table>
+          <thead><h3>Thank you for registering. Here are the details</h3></thead>
+          <tbody class="span4">
+           <tr>
+             <td align="right" valign="top" class="xtraheight">Name:&nbsp;</td>
+             <td><span><b> {{student.name}}</b></span></td>
+           </tr>
+           <tr>
+             <td align="right" valign="top" class="xtraheight">Fathers Name:&nbsp; </td>
+             <td><span><b>{{student.fathersname}}</b></span></td>
+           </tr>
+           <tr>
+             <td align="right" valign="top" class="xtraheight">School Name:&nbsp;</td>
+             <td><span><b>{{student.school}}</b></span></td>
+           </tr>
+           <tr>
+             <td align="right" valign="top" class="xtraheight">Favorite Subject:&nbsp;</td>
+             <td><span><b>{{student.subject}}</b></span></td>
+           </tr>
+         </tbody>
+       </table>
+     </form>
+   </div>
+ </div>
 </body>
