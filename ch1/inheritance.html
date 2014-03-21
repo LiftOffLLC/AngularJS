@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>AngularJS - Inheritance</title>  
+    <link rel="stylesheet" href="./styles/default.css">
+  </head>
+  <body ng-app="inheritanceApp">
+    <div class="hero-unit">
+      Let's look at Inheritance
+    </div>
+    <div class="row-fluid" style="margin-left: 60px">
+      <div class="span4" style="margin-left: 60px" ng-controller="LogCtrl">
+        We are printing the current time
+        </br>
+        </br>
+        {{getCurrentTime()}}
+      </div>
+      <div ng-controller="BaseCtrl" class="span4">
+        <div ng-controller="UserCtrl">
+          We are printing the current time
+          </br>
+          </br>
+          <span class="alert alert-info">
+            {{getCurrentTime()}}
+          </span>  
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery.js" type="text/javascript"></script>
+    <script src="./js/angular.min.js" type="text/javascript"></script>
+    <script src="./js/inheritance.js" type="text/javascript"></script>
+  </body>  
+</html>

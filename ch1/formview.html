@@ -1,0 +1,53 @@
+<form class="form" name="StudentFrm">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="signuptable">
+      <tbody>
+       <tr>
+       <td align="right" valign="top" class="xtraheight">Name</td>
+       <td><input type="text" ng-required="true" ng-model="student.name"></td>
+       </tr>
+      <tr>
+       <td align="right" valign="top" class="xtraheight">Fathers Name</td>
+       <td><input type="text" ng-required="true" ng-model="student.fathersname"></td>
+       </tr>
+        <tr>
+       <td align="right" valign="top" class="xtraheight">School Name</td>
+       <td><input type="text" ng-required="true" ng-model="student.school"></td>
+       </tr>
+        <tr>
+       <td align="right" valign="top" class="xtraheight">Favorite Subject</td>
+       <td><input type="text" ng-required="true" ng-model="student.subject"></td>
+       </tr>                 
+        <tr>
+          <td valign="top">&nbsp;</td>
+          <td valign="top">
+            <input class="greenbtn" type="button" href="javascript:void(0)" ng-click="regrStud()" ng-disabled="StudentFrm.$invalid" style="padding:10px; font-size:14px; letter-spacing:0;" value="Save"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>  
+  <div ng-show="successMsg">
+  <form class="form">   
+    <table>
+    <thead>Thank you for registering. Here are the details</thead>
+      <tbody class="span4">
+       <tr>
+       <td align="right" valign="top" class="xtraheight">Name:&nbsp;</td>
+       <td><span> {{student.name}}</span></td>
+       </tr>
+      <tr>
+       <td align="right" valign="top" class="xtraheight">Fathers Name:&nbsp; </td>
+       <td><span> {{student.fathersname}}</span></td>
+       </tr>
+        <tr>
+       <td align="right" valign="top" class="xtraheight">School Name:&nbsp;</td>
+       <td><span >{{student.school}}</span></td>
+       </tr>
+        <tr>
+       <td align="right" valign="top" class="xtraheight">Favorite Subject:&nbsp;</td>
+       <td><span> {{student.subject}}</span></td>
+       </tr>                         
+      </tbody>
+    </table>  
+    </form>
+  </div>

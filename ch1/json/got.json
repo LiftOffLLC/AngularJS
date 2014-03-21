@@ -1,0 +1,17 @@
+{
+	"name" : "Game of Thrones",
+	"characters" : [
+					{
+						"name" 	: "Tyrion Lannister",
+						"url" 	: "http://awoiaf.westeros.org/index.php/Tyrion_Lannister‎"
+					},
+					{
+						"name"	: "Daenerys targaryen",
+						"url"	: "http://awoiaf.westeros.org/index.php/Daenerys_Targaryen"
+					},
+					{
+						"name"	: "Arya Stark",
+						"url"	: "http://awoiaf.westeros.org/index.php/Arya_Stark‎"
+					}
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"list" : [{
+			"name" : "Game of Thrones",
+			"file" : "got.json"
+		},
+		{
+			"name" : "Prison Break",
+			"file" : "prisonbreak.json"
+		}
+		]
+}
