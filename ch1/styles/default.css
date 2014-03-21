@@ -823,7 +823,7 @@ ol ul {
 }
 
 li {
-  line-height: 20px;
+  line-height: 30px;
 }
 
 ul.unstyled,
@@ -6165,3 +6165,23 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+
+.wrapper{ margin-bottom: 30px !important ;box-shadow:4px 4px 4px grey;margin-top: 30px !important; width:60%; margin: 0px auto; background-color: #f1f1f1; border: 4px solid grey; padding:5%;border-radius: 15px;}
+
+.logoclass{display: block;text-align: center;margin-bottom: 50px}
+
+.h1class{font-size: 25px; border-bottom: 2px solid grey; padding-bottom: 5px;}
+
+.contentmenu{width: 45%; background-color: #494949; margin: 0px auto; margin-top: 50px;border-radius: 15px;}
+
+.contentmenu a{ display: block; color: white; text-align: center;font-size: 18px; padding: 15px  0px ; border-bottom: dashed 1px #e5e5e5; }
+
+.contentmenu a:hover{background-color: black; text-decoration: none;}
+
+.greybg{background-color: #d6d3d3}
+
+.inputtextclass{border:solid 1px grey !important; width:300px; padding:17px !important; background: white !important; border-radius: 5px !important; margin-left: 5px !important}
+
+.greenbtn{background: #9dd53a !important; padding:5px 10px !important; margin-top: 15px; margin-right: 15px; color: black;}
+
+.greenbtn:hover{background: #333 !important; color:white;}
