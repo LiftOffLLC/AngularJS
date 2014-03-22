@@ -1,8 +1,3 @@
-/*
- LiftOff AngularJS Tutorial
- (c) 2013-2014 LiftOff LLC. http://www.liftoffllc.com
- License: MIT
-*/
 require 'sinatra/base'
 
 class SinatraStaticServer < Sinatra::Base
