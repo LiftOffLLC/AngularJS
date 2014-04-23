@@ -16,6 +16,18 @@ ch2App.config(['$routeProvider', function($routeProvider) {
           controller: 'ProjectCtrl',
           templateUrl: '/js/views/projects.html'
         })
+        .when('/timeout-bad', {
+          controller: 'TimeoutbadCtrl',
+          templateUrl: '/js/views/timeout.html'
+        })
+        .when('/timeout-better', {
+          controller: 'TimeoutBetterCtrl',
+          templateUrl: '/js/views/timeout.html'
+        })
+        .when('/ping-pong', {
+          controller: 'PingPongCtrl',
+          templateUrl: '/js/views/pingpong.html'
+        })
         .otherwise({
           redirectTo: '/static/welcome'
         });
@@ -50,6 +62,42 @@ ch2App.controller('ProjectCtrl', function($scope, project){
 
 })
 
+// chandan@liftoffllc.com
+ch2App.controller('TimeoutbadCtrl', function($scope, $timeout){
+  // Good practice, we did not create any scope level function
+  pollJob();
+  // bad usage: this code will run even when controller unloads
+  function pollJob(){
+    console.log('Poll Job Ping Pong at: ' + (new Date()));
+    $timeout(pollJob, 5000);
+  }
+});
+
+
+// chandan@liftoffllc.com
+ch2App.controller('TimeoutBetterCtrl', function($scope, $timeout){
+  // Good practice, we did not create any scope level function
+  pollJob();
+  function pollJob(){
+    console.log('Poll Job Ping Pong at: ' + (new Date()));
+    $scope.promise = $timeout(pollJob, 10000);
+  }
+  // Good usage: destroy promise when controller unloads
+  $scope.$on('$destroy', function() {
+    if($scope.promise){
+      $timeout.cancel($scope.promise);
+    }
+  });
+});
+
+// chandan@liftoffllc.com
+ch2App.controller('PingPongCtrl', function($scope, $timeout){
+  $scope.pingPong = {};
+  $timeout(function(){
+    $scope.pingPong.action = "ping"
+  }, 5000);
+});
+
 //help in showing the subnavs
 ch2App.directive('loNav', function($rootScope) {
   return {
@@ -62,6 +110,47 @@ ch2App.directive('loNav', function($rootScope) {
           elm.addClass('active');
         }
       });
+    }
+  };
+});
+
+//help in showing the subnavs
+ch2App.directive('ping', function($timeout) {
+  return {
+    restrict: 'A',
+    scope: {ref: '='},
+    link: function(scope, elm, attr) {
+      scope.$watch('ref.action', ping);
+      function ping(){
+        if(scope.ref.action === 'ping') {
+          elm.addClass('animated bounce').html('ping at : ' + (new Date()));
+          $timeout(function(){
+            scope.ref.action = 'pong';
+            elm.removeClass('animated bounce');
+          }, 5000);
+        }
+      }
+    }
+  };
+});
+
+//help in showing the subnavs
+ch2App.directive('pong', function($timeout) {
+  return {
+    restrict: 'A',
+    scope: {ref: '='},
+    link: function(scope, elm, attr) {
+      scope.$watch('ref.action', ping);
+      function ping(){
+        if(scope.ref.action === 'pong') {
+          elm.addClass('animated shake').html('passed on to pong : ' + (new Date()));
+          $timeout(onTimeout, 5000);
+        }
+      }
+      function onTimeout(){
+        scope.ref.action = 'ping';
+        elm.removeClass('animated shake');
+      }
     }
   };
 });
