@@ -12,17 +12,42 @@ ch2App.config(['$routeProvider', function($routeProvider) {
           controller: 'StaticCtrl',
           template: '<div ng-include="routeTpl"></div>'
         })
-        .when('/detail/:step', {
-          controller: 'DetailCtrl',
-          template: '<div ng-include="routeTpl" class="pane login"></div>'
+        .when('/projects', {
+          controller: 'ProjectCtrl',
+          templateUrl: '/js/views/projects.html'
         })
         .otherwise({
           redirectTo: '/static/welcome'
         });
     }]);
 
+//definition of the services for the app
+ch2App.factory('projectRest',function($resource, $q){
+  //REST-API for the user is invoked from here
+  var Project = $resource("/project/:action",
+    { action: '@action' },
+    {
+      'create': { method:'POST', params: {action: 'create'}},
+    });
+
+  return Project;
+ });
+
+//model for encapsulating data logic related to project
+ch2App.factory('project',function($timeout){
+  return {
+    init: function(){
+    },
+  }
+});
+
+//definition of controller for the app
 ch2App.controller('StaticCtrl', function($scope, $routeParams){
   $scope.routeTpl = '/js/views/'+$routeParams.current+'.html';
+});
+
+ch2App.controller('ProjectCtrl', function($scope, project){
+
 })
 
 //help in showing the subnavs
