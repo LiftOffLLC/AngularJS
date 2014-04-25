@@ -68,7 +68,7 @@ ch2App.controller('TimeoutbadCtrl', function($scope, $timeout){
   pollJob();
   // bad usage: this code will run even when controller unloads
   function pollJob(){
-    console.log('Poll Job Ping Pong at: ' + (new Date()));
+    console.log('Bad practise: Poll Job Ping Pong at: ' + (new Date()));
     $timeout(pollJob, 5000);
   }
 });
@@ -79,7 +79,7 @@ ch2App.controller('TimeoutBetterCtrl', function($scope, $timeout){
   // Good practice, we did not create any scope level function
   pollJob();
   function pollJob(){
-    console.log('Poll Job Ping Pong at: ' + (new Date()));
+    console.log('Good practise: Poll Job Ping Pong at: ' + (new Date()));
     $scope.promise = $timeout(pollJob, 10000);
   }
   // Good usage: destroy promise when controller unloads
