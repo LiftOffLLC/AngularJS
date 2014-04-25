@@ -3,7 +3,7 @@
 // License: MIT
 
 //basic app definition
-var ch2App = angular.module('ch2App', ['ngRoute', 'ngResource']);
+var ch2App = angular.module('ch2App', ['ngRoute', 'ngResource', 'firebase']);
 
 //app route definitions
 ch2App.config(['$routeProvider', function($routeProvider) {
@@ -46,7 +46,7 @@ ch2App.factory('projectRest',function($resource, $q){
  });
 
 //model for encapsulating data logic related to project
-ch2App.factory('project',function($timeout, projectRest){
+ch2App.factory('project',function($timeout, $firebase, projectRest){
   var project = {};
   return {
     init: function(){
@@ -55,10 +55,16 @@ ch2App.factory('project',function($timeout, projectRest){
       //TODO: do any other model specific logic
       // projectRest.create(project, function(data){
       // })
+      //for now using firebase at data store
+      var projects = $firebase(new Firebase('https://angularjs-meetup.firebaseio.com/projects'));
+      var new_entry = {}
+      new_entry[new Date().getTime()] = input;
+      projects.$update(new_entry);
       cb({success: true});
     },
     load: function(){
       //we be loading from a static list for now
+      return $firebase(new Firebase('https://angularjs-meetup.firebaseio.com'));
     }
   }
 });
@@ -71,16 +77,17 @@ ch2App.controller('StaticCtrl', function($scope, $routeParams){
 ch2App.controller('ProjectCtrl', function($scope, project){
   $scope.mode = 'list';
   $scope.openForm = function(){
+    $scope.new_project = {};
     $scope.mode = 'mode';
     $scope.innerTpl = '/js/views/new_project.html';
   }
   $scope.list = function(){
     $scope.mode = 'list';
     $scope.innerTpl = '/js/views/list_projects.html';
-    $scope.projects = project.load();
+    $scope.fbase = project.load();
   }
   $scope.create = function(){
-    project.save($scope.project, function(data){
+    project.save($scope.new_project, function(data){
       $scope.list();
     })
   }

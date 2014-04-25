@@ -9,23 +9,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+    <tr ng-repeat="(k, p) in fbase.projects">
+      <td>{{$index}}</td>
+      <td>{{p.company_name}}</td>
+      <td>{{p.location}}</td>
+      <td>{{p.billed_amount}}</td>
     </tr>
   </tbody>
 </table>
