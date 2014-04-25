@@ -1,0 +1,26 @@
+<h2>New Project</h2>
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Company Name</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" ng-model="new_project.company_name" placeholder="Abc Inc.,">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">Location</label>
+    <div class="controls">
+      <input type="text" id="inputPassword" placeholder="10, Rest House Rd" ng-model="new_project.location">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">Billed Amount</label>
+    <div class="controls">
+      <input type="text" id="inputPassword" placeholder="$453.00" ng-model="new_project.billed_amount">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary" ng-click="create()">Save</button>
+    </div>
+  </div>
+</form>

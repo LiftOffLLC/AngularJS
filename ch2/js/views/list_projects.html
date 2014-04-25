@@ -1,0 +1,19 @@
+<h2>List of Configured Projects</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Company Name</th>
+      <th>Locatioon</th>
+      <th>Billed Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="(k, p) in fbase.projects">
+      <td>{{$index}}</td>
+      <td>{{p.company_name}}</td>
+      <td>{{p.location}}</td>
+      <td>{{p.billed_amount}}</td>
+    </tr>
+  </tbody>
+</table>
