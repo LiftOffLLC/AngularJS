@@ -46,10 +46,20 @@ ch2App.factory('projectRest',function($resource, $q){
  });
 
 //model for encapsulating data logic related to project
-ch2App.factory('project',function($timeout){
+ch2App.factory('project',function($timeout, projectRest){
+  var project = {};
   return {
     init: function(){
     },
+    save: function(input, cb){
+      //TODO: do any other model specific logic
+      // projectRest.create(project, function(data){
+      // })
+      cb({success: true});
+    },
+    load: function(){
+      //we be loading from a static list for now
+    }
   }
 });
 
@@ -59,7 +69,22 @@ ch2App.controller('StaticCtrl', function($scope, $routeParams){
 });
 
 ch2App.controller('ProjectCtrl', function($scope, project){
-
+  $scope.mode = 'list';
+  $scope.openForm = function(){
+    $scope.mode = 'mode';
+    $scope.innerTpl = '/js/views/new_project.html';
+  }
+  $scope.list = function(){
+    $scope.mode = 'list';
+    $scope.innerTpl = '/js/views/list_projects.html';
+    $scope.projects = project.load();
+  }
+  $scope.create = function(){
+    project.save($scope.project, function(data){
+      $scope.list();
+    })
+  }
+  $scope.list();
 })
 
 // chandan@liftoffllc.com
