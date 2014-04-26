@@ -16,6 +16,9 @@ ch2App.config(['$routeProvider', function($routeProvider) {
           controller: 'ProjectCtrl',
           templateUrl: '/js/views/projects.html'
         })
+        .when('/inheritance', {          
+          templateUrl: '/js/views/inheritance.html'
+        })
         .when('/timeout-bad', {
           controller: 'TimeoutbadCtrl',
           templateUrl: '/js/views/timeout.html'
@@ -93,6 +96,23 @@ ch2App.controller('ProjectCtrl', function($scope, project){
   }
   $scope.list();
 })
+
+ch2App.controller('BaseCtrl', function($scope) {
+    $scope.message = {};
+    $scope.message.text = "Welcome to the meet";    
+});
+
+ch2App.controller('childController1', function($scope) {
+  $scope.change = function(newLocation) {
+    $scope.message.text = newLocation;
+  }
+});
+
+ch2App.controller('childController2', function($scope) {
+  $scope.change = function(newLocation) {
+    $scope.message.text = newLocation;
+  }
+});
 
 // chandan@liftoffllc.com
 ch2App.controller('TimeoutbadCtrl', function($scope, $timeout){
