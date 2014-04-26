@@ -104,12 +104,14 @@ ch2App.controller('BaseCtrl', function($scope) {
 
 ch2App.controller('childController1', function($scope) {
   $scope.change = function(newLocation) {
+    console.log("Existing value is " + $scope.message.text);
     $scope.message.text = newLocation;
   }
 });
 
 ch2App.controller('childController2', function($scope) {
   $scope.change = function(newLocation) {
+    console.log("Existing value is " + $scope.message.text);
     $scope.message.text = newLocation;
   }
 });
