@@ -1,0 +1,15 @@
+<html ng-app>
+	<head>
+		<title>Angular JS example</title>
+	    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+	    <script type="text/javascript" src="temp.js"></script>
+	</head>
+
+	<body>
+		<ul ng-controller='StudentListController'>
+			<li ng-repeat='student in students'>
+				<a href='/student/view/{{student.id}}'>{{student.name}}</a>
+			</li>
+		</ul>	
+	</body>
+</html>

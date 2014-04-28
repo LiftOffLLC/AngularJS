@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script src="example1.js"></script>
+  </head>
+
+  <body>
+    <div ng-app="myApp">
+     <div ng-controller="AvengersCtrl">
+       <table>
+         <tr ng-repeat="each in avengers.cast">
+           <td>{{each.name | lowercase}}</td>
+           <td>{{each.age}}</td>
+         </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

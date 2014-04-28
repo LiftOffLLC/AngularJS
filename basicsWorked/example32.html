@@ -1,0 +1,24 @@
+<html ng-app>
+	<head>
+		<title>Angular JS example</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script src="temp.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="Ctrl1">
+		    <input type="text" ng-model="data.msg"/>
+		    <br/>
+    		{{data.msg}} world
+    	</div>
+	</body>
+</html>
+
+<!--
+
+1> we didn’t have to register any event listeners or write any callbacks.
+2> There are no classes or IDs in the HTML to identify where to attach event listeners.
+3> Ctrl1 function (in .js file) got the $scope object without having to create it.
+4> No neccessity to bother on to make any call to Ctrl1 function or figure out when to call it.
+
+-->
