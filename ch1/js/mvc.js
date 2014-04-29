@@ -13,7 +13,9 @@ function mvcCtrl($scope) {
 
   //keeps sucess message hidden
   $scope.successMsg = false;
-  $scope.regrStud = function(){
+  
+  $scope.regrStud = function()
+  {
     //TODO: make the actual AJAX call to save
     $scope.successMsg = true;
   }

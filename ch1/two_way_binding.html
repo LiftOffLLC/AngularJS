@@ -3,16 +3,28 @@
  (c) 2013-2014 LiftOff LLC. http://www.liftoffllc.com
  License: MIT
 -->
- <html>
+<html>
+<!-- head part of the page -->
   <head>
+
+    <script src="./js/angular.min.js" type="text/javascript"></script>
+    <script src="./js/two_way.js" type="text/javascript"></script>
+
     <title>AngularJS - 2 Way Data Binding</title>
+
     <link rel="stylesheet" href="./styles/default.css">
+
   </head>
+
+<!-- body part of the page -->
   <body ng-app="twoWayApp">
+
     <div class="hero-unit">
       Let's look at power of 2 way data binding
     </div>
+
     <div class="row-fluid" style="margin-left: 60px">
+
       <div class="span4">
         <form>
           <fieldset>
@@ -20,6 +32,7 @@
           </fieldset>
         </form>
       </div>
+
       <div class="span4">
         Now you are seeing it here...
         </br>
@@ -29,8 +42,9 @@
           {{welcome}}
         </span>
       </div>
+
     </div>
-    <script src="./js/angular.min.js" type="text/javascript"></script>
-    <script src="./js/two_way.js" type="text/javascript"></script>
+
   </body>
+
 </html>
