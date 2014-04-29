@@ -12,16 +12,12 @@ end
 post '/register' do 
 
 	# extracting form data
+	usr_details = JSON.parse(request.body.read) # reading the parameters 
 
-	@first_name = params[:first_name]
-	@last_name = params[:last_name]
-	@mail_id = params[:mail_id]
-	@password = params[:password]
-
-	# puts @first_name 
-	# puts @last_name 
-	# puts @mail_id 
-	# puts @password
+	@first_name = usr_details["first_name"]
+	@last_name = usr_details["last_name"]
+	@mail_id = usr_details["mail_id"]
+	@password = usr_details["password"]
 
 	# preparing request object
 	url = 'http://bloom-api.herokuapp.com/v1/users'
