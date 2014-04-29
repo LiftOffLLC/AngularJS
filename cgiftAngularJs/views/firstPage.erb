@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>cgift</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+		<script src="/fPage.js"></script>
+	</head>
+
+	<body ng-app="firstPageApp">
+<!-- 		<div>
+			<%=
+				# "You logged from your account successfully" if @flg_out=="true"
+			%>
+		</div> -->
+
+<!-- registration form -->
+		<div ng-controller="LoginFormCtrl">
+			<h1><b>login</b></h1>
+			<h4>
+				<form autocomplete="on" name="usrLoginForm">
+					Email-id:<input type="email" ng-required="true" ng-model="user.email"/> 
+					<br>
+					Password:<input type="password" ng-required="true" ng-model="user.password"/>
+					<br>
+					<input type="reset" value="clear"/> | <input type="submit" ng-click="loginUsr()" ng-disabled="usrLoginForm.$invalid" value="login"/>
+					<br>
+				</form>
+			<h4>
+		</div>
+
+		<br>
+		<hr>
+		<br>
+
+<!-- login form -->
+		<div ng-controller="RegFormCtrl">
+			<h1><b>Sign-up</b></h1>
+			<div ng-show="regSucessMsg"> 
+				<h5>
+					<p>{{regStatus}}</p>
+				</h5>
+			</div>	
+			<h4>
+				<form autocomplete="on" name="usrRegForm">
+					First name:<input type="text" ng-required="true" ng-model="regUser.fName"/>
+					<br>
+					Last name:<input type="text" ng-model="regUser.lName"/>
+					<br>
+					Email-id:<input type="email" ng-required="true" ng-model="regUser.email"/> 
+					<br>
+					Password:<input type="password" ng-required="true" ng-model="regUser.password" placeholder="create strong password"/>
+					<br>
+					<input type="reset" value="clear"/> | <input type="submit" ng-click="registerUsr()" ng-disabled="usrRegForm.$invalid" value="sign-up"/>
+					<br>
+				</form>
+			<h4>
+		</div>
+
+	</body>
+</html>
