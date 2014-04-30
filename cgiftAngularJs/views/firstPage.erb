@@ -24,32 +24,38 @@
 <!-- login form -->
 		<div ng-controller="LoginFormCtrl">
 
-			<h1><b>login</b></h1>
+			<div ng-show="logoutFlag">
+				<h3><a href="/logout">logout</a></h3>
+			</div>
 
 			<div ng-show="logFailMsg"> 
-				<h5>
-					<p>{{logStatus}}</p>
-				</h5>
+				<h5>{{logStatus}}</h5>
 			</div>	
 
-			<h4>
-				<form autocomplete="on" name="usrLoginForm">
-					Email-id:<input type="email" ng-required="true" ng-model="logUser.email"/> 
-					<br>
-					Password:<input type="password" ng-required="true" ng-model="logUser.password"/>
-					<br>
-					<input type="reset" value="clear"/> | <input type="submit" ng-click="loginUsr()" ng-disabled="usrLoginForm.$invalid" value="login"/>
-					<br>
-				</form>
-			<h4>
+			<div ng-show="loginForm">
+				<h1><b>login</b></h1>
+				<h4><b>
+					<form autocomplete="on" name="usrLoginForm">
+						Email-id:<input type="email" ng-required="true" ng-model="logUser.email"/> 
+						<br>
+						Password:<input type="password" ng-required="true" ng-model="logUser.password"/>
+						<br>
+						<input type="reset" value="clear"/> | <input type="submit" ng-click="loginUsr()" ng-disabled="usrLoginForm.$invalid" value="login"/>
+						<br>			
+					</form>
+				</b></h4>
+			</div>
+				
+			<div ng-show="anotherParcelMsg">
+				<h3><b>{{nextParcel}}</b></h3>				
+			</div>	
+
+			<div ng-show="confirmMsg">
+				<h5>{{confirmStatus}}</h5>				
+			</div>	
 
 			<div ng-include="homePage"> 
 			</div>
-			<div ng-show="confirmMsg">
-				<h5>
-					<p>{{confirmStatus}}</p>
-				</h5>				
-			</div>	
 		</div>
 
 		<br>

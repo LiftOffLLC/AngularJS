@@ -38,6 +38,10 @@ get '/home' do
 	erb :homePage
 end
 
+get '/logout' do 
+	redirect("/cgift")
+end
+
 # route handling registration of users 
 post '/register' do 
 

@@ -6,6 +6,9 @@ function LoginFormCtrl($scope,$resource)
 {
   //initialization the login user model to nil
   $scope.logUser = {};
+  $scope.loginForm=true;
+
+console.log(this);
 
   $scope.loginUsr = function()
   {
@@ -28,12 +31,16 @@ function LoginFormCtrl($scope,$resource)
                   else
                   {
                     $scope.logFailMsg = false;
+                  
+                    $scope.loginForm=false;
+                  
                     $scope.homePage="/home";
                     // $(document).ready(function()
                     //          {
                     //             $scope.dat.datepicker({ minDate: -20, maxDate: "+2M"});
                     //          }
                     //         );
+                    $scope.logoutFlag = true;
                   }
                   $scope.logUser = {};
                 }                  
@@ -44,7 +51,11 @@ function LoginFormCtrl($scope,$resource)
   {
     $scope.confirmStatus="Thank you, The parcel will be collected on "+ prcl.dat+" from "+prcl.addrss+" by "+prcl.tim;
     $scope.confirmMsg=true; 
+
     this.parcel = {};
+
+    $scope.nextParcel="Schedule another parcel";
+    $scope.anotherParcelMsg=true;
   }
 }
 
