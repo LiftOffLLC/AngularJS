@@ -5,11 +5,46 @@ var firstPage = angular.module('firstPageApp', ['ngResource']);
 function LoginFormCtrl($scope,$resource) 
 {
   //initialization the login user model to nil
-  $scope.user = {};
+  $scope.logUser = {};
 
   $scope.loginUsr = function()
   {
-    //make the actual AJAX call to save
+    var logRes = $resource('/login');
+
+    logRes.save(
+                {
+                    "mail_id":$scope.logUser.email, 
+                    "password":$scope.logUser.password
+                },
+
+                function(state)
+                {
+                  if (state.msg != null)    
+                  {
+                    $scope.logStatus=state.msg;
+                    $scope.logFailMsg = true;
+  
+                  }
+                  else
+                  {
+                    $scope.logFailMsg = false;
+                    $scope.homePage="/home";
+                    // $(document).ready(function()
+                    //          {
+                    //             $scope.dat.datepicker({ minDate: -20, maxDate: "+2M"});
+                    //          }
+                    //         );
+                  }
+                  $scope.logUser = {};
+                }                  
+               );
+  }                
+  
+  $scope.packCollect =  function(prcl)
+  {
+    $scope.confirmStatus="Thank you, The parcel will be collected on "+ prcl.dat+" from "+prcl.addrss+" by "+prcl.tim;
+    $scope.confirmMsg=true; 
+    this.parcel = {};
   }
 }
 

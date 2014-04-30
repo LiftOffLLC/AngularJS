@@ -2,9 +2,15 @@
 <html>
 	<head>
 		<title>cgift</title>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+		
 		<script src="/fPage.js"></script>
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+
 	</head>
 
 	<body ng-app="firstPageApp">
@@ -14,26 +20,44 @@
 			%>
 		</div> -->
 
-<!-- registration form -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- login form -->
 		<div ng-controller="LoginFormCtrl">
+
 			<h1><b>login</b></h1>
+
+			<div ng-show="logFailMsg"> 
+				<h5>
+					<p>{{logStatus}}</p>
+				</h5>
+			</div>	
+
 			<h4>
 				<form autocomplete="on" name="usrLoginForm">
-					Email-id:<input type="email" ng-required="true" ng-model="user.email"/> 
+					Email-id:<input type="email" ng-required="true" ng-model="logUser.email"/> 
 					<br>
-					Password:<input type="password" ng-required="true" ng-model="user.password"/>
+					Password:<input type="password" ng-required="true" ng-model="logUser.password"/>
 					<br>
 					<input type="reset" value="clear"/> | <input type="submit" ng-click="loginUsr()" ng-disabled="usrLoginForm.$invalid" value="login"/>
 					<br>
 				</form>
 			<h4>
+
+			<div ng-include="homePage"> 
+			</div>
+			<div ng-show="confirmMsg">
+				<h5>
+					<p>{{confirmStatus}}</p>
+				</h5>				
+			</div>	
 		</div>
 
 		<br>
 		<hr>
 		<br>
 
-<!-- login form -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- registration form -->
 		<div ng-controller="RegFormCtrl">
 			<h1><b>Sign-up</b></h1>
 			<div ng-show="regSucessMsg"> 
