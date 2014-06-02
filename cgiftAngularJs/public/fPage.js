@@ -8,8 +8,6 @@ function LoginFormCtrl($scope,$resource)
   $scope.logUser = {};
   $scope.loginForm=true;
 
-console.log(this);
-
   $scope.loginUsr = function()
   {
     var logRes = $resource('/login');
