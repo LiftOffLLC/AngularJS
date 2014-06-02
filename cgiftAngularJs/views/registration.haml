@@ -1,0 +1,25 @@
+%h1
+  %b Registration
+%div{"ng-show" => "regSucessMsg"}
+  %h5
+    %p {{regStatus}}
+%h4
+  %form{:autocomplete => "on", :name => "usrRegForm"}
+    First name:
+    %input{"ng-model" => "regUser.fName", "ng-required" => "true", :type => "text"}/
+    %br
+      Last name:
+      %input{"ng-model" => "regUser.lName", :type => "text"}/
+      %br
+        Email-id:
+        %input{"ng-model" => "regUser.email", "ng-required" => "true", :type => "email"}/
+        %br
+          Password:
+          %input{"ng-model" => "regUser.password", "ng-required" => "true", :placeholder => "create strong password", :type => "password"}/
+          %br
+            %input{:type => "reset", :value => "clear"}/
+            |
+            %input{"ng-click" => "registerUsr()", "ng-disabled" => "usrRegForm.$invalid", :type => "submit", :value => "sign-up"}/
+            %br
+  %h4
+  

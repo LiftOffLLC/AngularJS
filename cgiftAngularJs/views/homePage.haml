@@ -1,0 +1,29 @@
+%h3
+  %a{:href => "/logout"}
+    %button logout
+\==================
+%div{"ng-show" => "anotherParcelMsg"}
+  %h3
+    %b {{nextParcel}}
+%br/
+%b
+  %form{:name => "packageCollectForm"}
+    Package pickup:
+    %input{"ng-model" => "parcel.addrss", "ng-required" => "true", :placeholder => "address here", :type => "text"}/
+    %br
+      Date:
+      %input{"ng-model" => "parcel.dat", "ng-required" => "true", :type => "date"}/
+      %br
+        Time:
+        %input{"ng-model" => "parcel.tim", "ng-required" => "true", :type => "time"}/
+        %br
+          Weight:
+          %input{"ng-model" => "parcel.wght", "ng-required" => "true", :placeholder => "in Grams", :type => "number"}/
+          %br
+            %input{:type => "reset", :value => "clear"}/
+            |
+            %input{"ng-click" => "packCollect(parcel)", "ng-disabled" => "packageCollectForm.$invalid", :type => "submit", :value => "submit"}/
+%br/
+%div{"ng-show" => "confirmMsg"}
+  %h5 {{confirmStatus}}
+  
