@@ -1,0 +1,26 @@
+%br
+  %a{:href => "#/register"}
+    %button
+      %b Sign-Up
+  %br
+    \==================
+    %div{"ng-show" => "logFailMsg"}
+      %h5
+        %b {{logStatus}}
+    %div
+      %h2 login
+      %h4
+        %form{:autocomplete => "on", :name => "usrLoginForm"}
+          %b Email-id:
+          %input{"ng-model" => "logUser.email", "ng-required" => "true", :type => "email"}/
+          %br
+            %b Password:
+            %input{"ng-model" => "logUser.password", "ng-required" => "true", :type => "password"}/
+            %br
+              %b
+                %input{:type => "reset", :value => "clear"}/
+              |
+              %b
+                %input{"ng-click" => "loginUsr()", "ng-disabled" => "usrLoginForm.$invalid", :type => "submit", :value => "login"}/
+              %br
+              
