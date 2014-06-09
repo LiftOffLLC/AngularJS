@@ -7,8 +7,10 @@
 	<h3><b ng-bind="nextParcel"></b></h3>				
 </div>	
 
-<br/><b>
-<form name="packageCollectForm">
+<br/>
+<p> <%= yield_content :about_cgift %></p>
+<br/>
+<b><form name="packageCollectForm">
 	Package pickup:<input type="text" placeholder="address here" ng-required="true" ng-model="parcel.addrss"/>
 	<br>
 	Date:<input type="date" ng-required="true" ng-model="parcel.dat"/>
@@ -18,9 +20,11 @@
 	Weight:<input type="number" ng-required="true" placeholder="in Grams" ng-model="parcel.wght"/>					
 	<br>
 	<input type="reset" value="clear"/> | <input type="submit" ng-click="packCollect(parcel)" ng-disabled="packageCollectForm.$invalid" value="submit"/>
-</form>	
-</b><br/>
-
+</form></b>
+<br/>
 <div ng-show="confirmMsg">
 	<h5><b ng-bind="confirmStatus"></b></h5>				
 </div>	
+<br/>
+<br/>
+<p> <%= yield_content :about_cgift %></p>

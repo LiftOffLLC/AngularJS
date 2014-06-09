@@ -10,6 +10,11 @@ Cgift::App.controllers :homePageView do
 
 	# route for home page after authentication
 	get :index, :map=> '/homePageView' do 
+        
+        content_for :about_cgift do 
+        "c-gift makes the life easy, you can post the parcel from the place you are"
+        end
+
 		render :homePage
 	end
 end
