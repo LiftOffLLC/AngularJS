@@ -29,5 +29,3 @@ gem 'padrino', '0.12.2'
 #   gem 'padrino-' + g, '0.12.2'
 # end
 gem 'json'
-
-gem 'haml'

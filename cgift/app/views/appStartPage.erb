@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="firstPageApp">
+	<head>
+		<title>cgift</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+		<script src="https://code.angularjs.org/1.2.16/angular-route.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--		
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+-->
+		<script src="/javascripts/intialize.js"></script>
+		<script src="/javascripts/main.js"></script>
+		<script src="/javascripts/home.js"></script>
+		<script src="/javascripts/registration.js"></script>
+<!--		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+-->
+	</head>
+	<body>
+		<!-- message in-case of logout -->
+		<h4><%= "You logged-out successfully" if @flglogout_local==true%></h4>
+		<% @flglogout_local=false%>
+		<!-- routing through multiple pages -->
+		<ng-view></ng-view>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<h1><b>Registration</b></h1>
+<div ng-show="regSucessMsg"> 
+	<h5>
+		<p>{{regStatus}}</p>
+	</h5>
+</div>	
+<h4>
+	<form autocomplete="on" name="usrRegForm">
+		First name:<input type="text" ng-required="true" ng-model="regUser.fName"/>
+		<br>
+		Last name:<input type="text" ng-model="regUser.lName"/>
+		<br>
+		Email-id:<input type="email" ng-required="true" ng-model="regUser.email"/> 
+		<br>
+		Password:<input type="password" ng-required="true" ng-model="regUser.password" placeholder="create strong password"/>
+		<br>
+		<input type="reset" value="clear"/> | <input type="submit" ng-click="registerUsr()" ng-disabled="usrRegForm.$invalid" value="sign-up"/>
+		<br>
+	</form>
+<h4>

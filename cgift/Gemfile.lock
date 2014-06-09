@@ -7,8 +7,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    haml (4.0.5)
-      tilt
     http_router (0.11.1)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -82,7 +80,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  haml
   json
   padrino (= 0.12.2)
   rake

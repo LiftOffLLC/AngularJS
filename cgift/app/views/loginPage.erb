@@ -1,0 +1,20 @@
+<br>
+<a href="#/register"><button><b>Sign-Up</b></button></a> 
+<br>
+==================
+<div ng-show="logFailMsg"> 
+	<h5><b>{{logStatus}}</b></h5>
+</div>	
+<div>
+<h2>login</h2>
+<h4>
+	<form autocomplete="on" name="usrLoginForm">
+		<b>Email-id:</b><input type="email" ng-required="true" ng-model="logUser.email"/> 
+		<br>
+		<b>Password:</b><input type="password" ng-required="true" ng-model="logUser.password"/>
+		<br>
+		<b><input type="reset" value="clear"/></b> | <b><input type="submit" ng-click="loginUsr()" ng-disabled="usrLoginForm.$invalid" value="login"/></b>
+		<br>			
+	</form>
+</b></h4>
+</div>

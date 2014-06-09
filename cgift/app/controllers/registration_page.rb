@@ -35,13 +35,13 @@ Cgift::App.controllers :register do
 		# checking for newly registering user
 	    if res_hash.has_key?("id")
 			# starting session   
-			session["session_mail_id"]=@mail_id	    
+			session[:session_mail_id]=@mail_id	    
 			return {"msg"=>"The registration is successful, kindly login using credentials"}.to_json
 		end
 
 		# validation scenario
 	    if res_hash.has_key?("error")
-			session["session_mail_id"]=nil
+			session[:session_mail_id]=nil
 		    return {"msg"=>"This email is already registered, kindly login"}.to_json
 		end
 	end

@@ -30,7 +30,7 @@ Cgift::App.controllers :login do
 			loginStatusMsg="credentials do not match, please enter valid email-id & password" 
 		else
 			# starting session 
-			session["session_mail_id"]=email
+			session[:session_mail_id]=email
 		end
 	    return {"msg"=>loginStatusMsg}.to_json
 	end
