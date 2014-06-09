@@ -5,7 +5,7 @@ Cgift::App.controllers :cgift do
         if session[:session_mail_id] != nil
 	        redirect("/homePageView")
 	    else
-			render :appStartPage
+			render :appStartPage, :layout => false
 		end
 	end
 end

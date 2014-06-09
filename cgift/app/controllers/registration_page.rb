@@ -2,7 +2,7 @@ Cgift::App.controllers :register do
 
 	# route for registration page for the new users
 	get :registrationPageView, :map=>'/register/registrationPageView' do 
-		render :registrationPage
+		render :registrationPage, :layout => false
 	end
 
 	# route handling registration of users 

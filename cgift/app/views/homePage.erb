@@ -1,15 +1,7 @@
-<h3><a href="/logout"><button>logout</button></a></h3>
-==================
-<br>
-	Hi <b> <%= "#{get_current_user()}" %> </b>
-<br>
 <div ng-show="anotherParcelMsg">
 	<h3><b ng-bind="nextParcel"></b></h3>				
 </div>	
-
-<br/>
-<p> <%= yield_content :about_cgift %></p>
-<br/>
+<br/><p> <%= yield_content :about_cgift %></p><br/>
 <b><form name="packageCollectForm">
 	Package pickup:<input type="text" placeholder="address here" ng-required="true" ng-model="parcel.addrss"/>
 	<br>

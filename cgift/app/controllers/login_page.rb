@@ -2,7 +2,7 @@ Cgift::App.controllers :login do
 
 	# route for login page
 	get  :loginPageView, :map=>'/login/loginPageView' do 
-		render :loginPage 
+		render :loginPage, :layout => false
 	end
 
 	# route handling the login scenario
