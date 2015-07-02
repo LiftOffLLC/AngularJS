@@ -54,11 +54,7 @@
 				<section>
 					<section>
 						<h2>Code Organizing</h2>
-						<p>Large Apps would run into hundreds of file, if not organized properly... it would lead to:</p>
-						<ul>
-							<li>Repeated Code in multiple controllers</li>
-							<li>Steep learning curve for new developers</li>
-						</ul>
+						<p>Large app = Many mini apps</p>
 					</section>
 					<section>
 						<h2>Code Organizing : Best Practices</h2>
@@ -158,7 +154,7 @@ communityApp.directive('caSlideSection', function(){
 					</section>
 					<section>
 						<h2>Directives : Demo</h2>
-            <iframe width="100%" height="300" src="http://jsfiddle.net/nikhilkarje/canadwh6/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <a class="jsbin-embed" href="http://jsbin.com/cuhozu/embed?html,js,output">JS Bin on jsbin.com</a>
 					</section>
 				</section>
 
@@ -233,18 +229,41 @@ registerApp.controller('GreetCtrl', function($scope, Person) {
 					</section>
           <section>
             <h2>Services : Demo</h2>
-              <iframe width="100%" height="300" src="http://jsfiddle.net/wbd0t9je/2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+              <a class="jsbin-embed" href="http://jsbin.com/yosehe/embed?html,js,output">Using Service on jsbin.com</a>
           </section>
 				</section>
 				<section>
 					<section>
 						<h2>Performance</h2>
-						<p>Write efficient code from day #1, don't think you can optimize after you go live</p>
+						<p>Write efficient code from day #1, don't think you can optimize after giving a working build</p>
 					</section>
 					<section>
-
+            <h2>Performance : Tip #1</h2>
+            <p>Use 'track by' to avoid unneccessary repaints.</p>
+            <a class="jsbin-embed" href="http://jsbin.com/burubu/embed?html,js,output">Track by in ng-repeat on jsbin.com</a>
 					</section>
+          <section>
+            <h2>Performance : Tip #2</h2>
+            <p>Clear $watch, $timeout by registering for $destroy.</p>
+            <a class="jsbin-embed" href="http://jsbin.com/kidosa/embed?html,js,output">Clear $watch, $timeout by using $destroy on jsbin.com</a>
+          </section>
+          <section>
+            <h2>Performance : Tip #3</h2>
+            <p>Use 'bind once', to reduce # of watchers.</p>
+            <a class="jsbin-embed" href="http://jsbin.com/ceqapi/embed?html,js,output">Using Bind Once on jsbin.com</a>
+          </section>
+          <section>
+            <h2>Performance : Tip #4</h2>
+            <p>ng-if vs ng-show, helps reduce # of DOM elements.</p>
+            <a class="jsbin-embed" href="http://jsbin.com/majeke/embed?html,js,output">ng-if vs ng-show on jsbin.com</a>
+          </section>
 				</section>
+        <section>
+          <h2>Questions?</h2>
+        </section>
+        <section>
+          <h2>Thanks!</h2>
+        </section>
 			</div>
 
 		</div>
@@ -276,6 +295,6 @@ registerApp.controller('GreetCtrl', function($scope, Person) {
 			});
 
 		</script>
-
+    <script src="http://static.jsbin.com/js/embed.min.js?3.30.3"></script>
 	</body>
 </html>
