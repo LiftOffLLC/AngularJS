@@ -104,9 +104,9 @@
 <div ng-controller="ColorCtrl">
     <div id="contSlide" class="slideStyle" style="background-color:yellow;" ng-click="animate()">Using Controller</div>
     <br/>
-    <slide-section color="color[0]" text="Hello" lapse="2000" reach="200"></slide-section>
+    <slide-section color="color[0]" text="Hello" lapse="2000" reach="200" dir="Left"></slide-section>
     <br/>
-    <slide-section color="color[1]" text="This is Faster" lapse="1000" reach="200"></slide-section>
+    <slide-section color="color[1]" text="This is Faster" lapse="1000" reach="200" dir="Top"></slide-section>
 </div>
 						</code></pre>
 						<pre><code data-trim contenteditable>
@@ -134,27 +134,29 @@ communityApp.directive('caSlideSection', function(){
             color: "=",
             text: "@",
             lapse: "@",
-            reach: "@"
+            reach: "@",
+            dir: "@"
         },
         link: function(scope, elm, attr){
-            scope.animate = function(){
 
-                elm.find("div").animate({
-                    marginLeft: '+'+scope.reach
-                }, parseInt(scope.lapse))
+          scope.animate = function(){
+            elm.find("div").animate(scope.getObj(scope.reach), parseInt(scope.lapse));
+            elm.find("div").animate(scope.getObj(0), parseInt(scope.lapse));
+          };
 
-                elm.find("div").animate({
-                    marginLeft: 0
-                }, parseInt(scope.lapse))
-            }
+          scope.getObj = function(reach){
+            var obj = {};
+            obj['margin' + scope.dir] = '+' + reach;
+            return obj;
+          };
         }
-    }
+    };
 });
 						</code></pre>
 					</section>
 					<section>
 						<h2>Directives : Demo</h2>
-            <a class="jsbin-embed" href="http://jsbin.com/cuhozu/embed?html,js,output">JS Bin on jsbin.com</a>
+            <a class="jsbin-embed" href="http://jsbin.com/gosuguvake/1/embed?html,js,output">JS Bin on jsbin.com</a>
 					</section>
 				</section>
 
